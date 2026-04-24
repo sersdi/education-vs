@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<!-- автоматический семантический тэг(создаётся автоматический(что бы сайт подстраивался под размер экрана телефона(зумирет сайт))) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- подключаем стиль -->
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Уроки игры на гитаре</title>
+		<meta
+			name="description"
+			content="лучший репетитор игры на гитаре в Новосибирске"
+		/>
+		<!-- добавляем fav-icon(иконка сайта в браузере) для этого нужна картинка png или jpg 512*512 svg-не подходит -->
+		<link rel="apple-touch-icon" sizes="57x57" href="icons/fav-icons/">
+		<link rel="apple-touch-icon" sizes="60x60" href="icons/fav-icons//apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="icons/fav-icons//apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="icons/fav-icons//apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="icons/fav-icons//apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="icons/fav-icons//apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="icons/fav-icons//apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="icons/fav-icons//apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="icons/fav-icons//apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="icons/fav-icons//android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="icons/fav-icons//favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="icons/fav-icons//favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="icons/fav-icons//favicon-16x16.png">
+		<link rel="manifest" href="icons/fav-icons//manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="icons/fav-icons//ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">	
+	</head>
+	<body>
+		<!-- Первая секция -->
+		<section class="main-section">
+			<!-- для моб версии создаём гамбургер -->
+			<!-- Создали контейнер -->
+			<div class="hamburger">
+				<!-- Добавили 3 тега span(выделили область контейнера под линии) -->
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<!-- Ограничивающий контейнер нав меню -->
+			<div class="container main-section__nav-container">
+				<!-- Навигационное меню -->
+				<header class="main-section__header">
+					<img
+						class="main-section__logo"
+						src="icons/logo.svg"
+						alt="Логотип школы"
+					/>
+				</header>
+				<nav class="main-section__nav nav-menu">
+					<ul class="nav-menu__list">
+						<li class="nav-menu__list-item">
+							<!-- a-ссылка в href-пишем название идентификатора id через # -->
+							<a href="#about-me">Обо мне</a>
+						</li>
+						<li class="nav-menu__list-item">
+							<a href="#lessons">Занятия</a>
+						</li>
+						<li class="nav-menu__list-item">
+							<!-- #-заглушка -->
+							<a href="#">Запись</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="container main-section__content-conteiner">
+				<!-- Левая часть первой секции -->
+				<div class="left-wrapper">
+					<img src="img/Фото гитариста.png" alt="" class="left-wrapper__img" />
+					<div class="left-wrapper__rectangle-blue"></div>
+					<div class="left-wrapper__rectangle-red"></div>
+					<div class="left-wrapper__rectangle-grey"></div>
+				</div>
+				<!-- Правая часть первой секции -->
+				<div class="right-wrapper">
+					<div class="right-wrapper__icons-box icons">
+						<div class="icons__item">
+							<i class="fa-brands fa-vk"></i>
+						</div>
+						<div class="icons__item">
+							<i class="fa-brands fa-telegram"></i>
+						</div>
+						<div class="icons__item">
+							<i class="fa-brands fa-facebook"></i>
+						</div>
+						<div class="icons__item">
+							<i class="fa-brands fa-instagram"></i>
+						</div>
+					</div>
+					<!-- Заголовок -->
+					<h1 class="right-wrapper__title title">
+						Я Виктор
+						<hr class="title__hr" />
+					</h1>
+					<!-- Текст -->
+					<p class="right-wrapper__text">
+						Репетитор игры на гитаре с семилетнем опытом преподавания
+					</p>
+					<!-- Кнопки -->
+					<div class="right-wrapper__button buttons">
+						<button class="buttons__main-btn">Забронировать <br />урок</button>
+						<div class="right-wrapper__icon-btn buttons__icon-btn">
+							<img src="icons/ChatsCircle.svg" alt="Иконка чата" />
+							<p class="buttons__text">Есть <br />вопросы?</p>
+						</div>
+					</div>
+				</div>
+				<!-- Круг -->
+				<div class="main-section__first-elipse elipse">
+					<div class="elipse__subtract"></div>
+				</div>
+			</div>
+			<!-- elipse_dig-модификатор -->
+			<div class="main-section__second-elipse elipse elipse_dig">
+				<div class="elipse__subtract elipse__subtract_big"></div>
+			</div>
+		</section>
+		<!-- Вторая секция -->
+		<!-- id-уникальный идентификатор нужен ждя якорности ссылок(переходим на опр часть сайта через ссылку) Идентификатор должен быть уникальным и не повторяться -->
+		<section id="about-me" class="second-section">
+			<div class="container second-section__container">
+				<!-- Заголовок -->
+				<h2 class="second-section__title title">
+					Преподаю
+					<hr class="title__hr" />
+				</h2>
+				<!--Карточки -->
+				<div class="second-section__cards-box">
+					<div class="second-section__cards-item cards-item">
+						<img
+							class="cards-item__img"
+							src="img/Электро-гитара 1.png"
+							alt="Электро-гитара"
+						/>
+						<p class="cards-item__text">Электро<br />гитара</p>
+					</div>
+					<div class="second-section__cards-item cards-item cards-item_red">
+						<img
+							class="cards-item__img"
+							src="img/Укулелли-гитара 1.png"
+							alt="Укулелли-гитара"
+						/>
+						<p class="cards-item__text">Укулеле<br />гитара</p>
+					</div>
+					<!--в конец добавил модификатор цвета -->
+					<div class="second-section__cards-item cards-item cards-item_grey">
+						<img
+							class="cards-item__img"
+							src="img/Акустика-гитара 1.png"
+							alt="Акустика-гитара"
+						/>
+						<p class="cards-item__text">Акустическая<br />гитара</p>
+					</div>
+				</div>
+				<!-- иконки -->
+				<div class="second-section__icons-box icons-box">
+					<div class="second-section__icons-item icons-item">
+						<img
+							class="icons-item__img"
+							src="/src/icons/01-Иконка_вторая секция 1.svg"
+							alt="кубок"
+						/>
+						<p class="icons-item__text">
+							<!-- <span> предназначен для выделения отдельных строк, символов или других строчных элементов для дальнейшего изменения их оформления с помощью стилей. -->
+							<span>7</span><br />лет<br />преподавания
+						</p>
+					</div>
+					<div class="second-section__icons-item icons-item">
+						<img
+							class="icons-item__img"
+							src="/src/icons/02-Иконка_вторая секкция 1.svg"
+							alt="нота"
+						/>
+						<p class="icons-item__text">
+							<span>2000</span><br />часов<br />преподавания
+						</p>
+					</div>
+					<div class="second-section__icons-item icons-item">
+						<img
+							class="icons-item__img"
+							src="/src/icons/03-Иконка_вторая секкция 1.svg"
+							alt="шляпа"
+						/>
+						<p class="icons-item__text"><span>314</span><br />студентов</p>
+					</div>
+					<div class="second-section__icons-item icons-item">
+						<img
+							class="icons-item__img"
+							src="/src/icons/04-Иконка_вторая секкция 1.svg"
+							alt="табель"
+						/>
+						<p class="icons-item__text">
+							<span>276</span><br />отзывов<br />на 5 звёзд
+						</p>
+					</div>
+				</div>
+				<!-- Круг -->
+				<div class="second-section__elipse elipse">
+					<div class="elipse__subtract"></div>
+				</div>
+			</div>
+		</section>
+		<!-- Третья секция -->
+		<section id="lessons" class="third-section">
+			<div class="container third-section__container">
+				<!-- Левая обёртка -->
+				<div class="third-section__left-wrapper">
+					<!-- Заголовок -->
+					<h3 class="third-section__left-title title">
+						Обучение
+						<hr class="title__hr" />
+					</h3>
+				</div>
+				<!-- Правая обёртка -->
+				<div class="third-section__right-wrapper">
+					<!-- Заголовок -->
+					<h4 class="third-section__right-title title">
+						Готовлю<br />виртуозов
+						<hr class="title__hr title__hr_top" />
+					</h4>
+					<p class="third-section__text">
+						Соображения высшего порядка, а также курс на
+						социально-ориентированный национальный проект создаёт предпосылки
+						качественно новых шагов для экономической целесообразности
+						принимаемых решений. Дорогие друзья, курс на
+						социально-ориентированный национальный проект позволяет выполнить
+						важнейшие задания по разработке ключевых компонентов планируемого
+						обновления. Равным образом выбранный нами инновационный путь
+						позволяет оценить значение модели развития. <br /><br />
+						Равным образом повышение уровня гражданского сознания позволяет
+						выполнить важнейшие задания по разработке позиций, занимаемых
+						участниками в отношении поставленных задач. Не следует, однако,
+						забывать о том, что дальнейшее развитие различных форм деятельности
+						позволяет оценить значение соответствующих условий активизации.
+						Разнообразный и богатый опыт реализация намеченного плана развития
+						создаёт предпосылки качественно новых шагов для экономической
+						целесообразности принимаемых решений.
+					</p>
+					<!-- Кнопки -->
+					<div class="third-section__buttons buttons">
+						<!-- Обычная кнопка -->
+						<button class="buttons__main-btn">Забронировать <br />урок</button>
+						<!-- Кнопка с иконкой -->
+						<div class="third-section__icon-btn buttons__icon-btn">
+							<img src="icons/ChatsCircle.svg" alt="Иконка чата" />
+							<p class="buttons__text">Есть <br />вопросы?</p>
+						</div>
+					</div>
+				</div>
+				<!-- круг -->
+				<div class="third-section__first-elipse elipse">
+					<div class="elipse__subtract"></div>
+				</div>
+				<!-- Экспорт круг -->
+				<img
+					class="third-section__figure"
+					src="/src/img/Subtract.svg"
+					alt="круг с полосками"
+				/>
+			</div>
+			<!-- Круг большой -->
+			<div class="third-section__second-elipse elipse elipse_dig">
+				<div class="elipse__subtract elipse__subtract_big"></div>
+			</div>
+		</section>
+		<!-- футер(гараж) -->
+		<footer class="footer">
+			<!-- контейнер для футера -->
+			<div class="container footer__container">
+				<!-- гриф -->
+				<img class="footer__img" src="img/Гриф 1.svg" alt="гриф" />
+				<!-- обертка внутри футера(ещё контейнер для позиционирования через флекс) -->
+				<div class="footer__wrapper">
+					<!-- заголовок -->
+					<h5 class="footer__title title">
+						Запишись на<br />пробный урок!
+						<hr class="title__hr title__hr_top" />
+					</h5>
+					<!-- иконки -->
+					<div class="footer__icons-box icons">
+						<div class="icons__item">
+							<i class="fa-brands fa-vk"></i>
+						</div>
+						<div class="icons__item">
+							<i class="fa-brands fa-telegram"></i>
+						</div>
+						<div class="icons__item">
+							<i class="fa-brands fa-facebook"></i>
+						</div>
+						<div class="icons__item">
+							<i class="fa-brands fa-instagram"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Подключаем скрипты в конце документа тк он работает с тэгами которые должны прогрузиться в первую очередь -->
+		<!-- пишем тэг скрипт и в нём указываем путь к скрипту -->
+		<!-- Подключаем библиотеку jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<!--Подключаем иконочные шрифты  -->
+		<script
+			src="https://kit.fontawesome.com/952e70cfc9.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- Файлы js подключаем в самом конце -->
+		<script src="js/script.js"></script>	
+	</body>
+</html>

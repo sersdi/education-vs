@@ -1,0 +1,805 @@
+// импортируем наши css свойства в лист со стилями 
+// для этого используем команду импорта до этого создали копии css файлов с расширением scss(препроцессор sass-css нужен что бы прочитать css файлы со скобками)
+// в конце проекта можем удалить все лишние стили кроме стайла сейчас не удалятся тк препроцессор будет при сохранении проекта автоматически спаунить их копии
+@import "normalizes.scss"
+@import "resets.scss"
+/* применяю для всех тэгов св-ва */
+*
+    box-sizing: border-box
+
+/* подключаю шрифты */
+@font-face 
+    font-family: "Montserrat1"
+    src: url('../fonts/Montserrat-Regualar.ttf')
+    // для того что бы на сайте сначала загрузился стандартный шрифт а затем обновился на наш (избегаем таким образом проблем с оптимизацией)
+    font-display: swap
+    /* начертание шрифта(обычный) */
+    font-weight: regular
+    font-style: normal
+@font-face 
+    font-family: "Montserrat1"
+    src: url('../fonts/Montserrat-Semi-Bold.ttf')
+    font-display: swap
+    /* жирное начертание */
+    font-weight: bold
+    font-style: normal
+
+/* Что бы стилизовать весь текст на сайте обращусь к тэгу html Где нужен будет другое начертание пишем просто font-weight */    
+html
+    font-family: Montserrat1
+
+//создал переменную
+$color-blue: #2688FA
+$color-red: #EB6262
+$color-grey: #716F73       
+
+//обращаюсь к контейнеру где нав меню и логотип(общая настройка)
+.container
+    //задали ширину блока 1140(тк это ширина блока по сетке из макета для 1440px)
+    max-width: 1140px
+    margin: 0 auto
+//обращаюсь к секции в целом        
+.main-section
+    position: relative
+    background: #D9D9D9
+    //задали только min высоту что бы секция растягивалась в зависимости от экрана и при доб нов инфы секция увеличивалась в высоту 
+    min-height: 800px
+    padding-top: 18px
+    //убираем элементы за границой секции
+    overflow: hidden
+    //обращаюсь к контейнеру где нав меню и логотип(конкретно для этой секции)    
+    &__nav-container
+        //задали тип обьектов(можно передвигать внутри контейнера)
+        display: flex
+        //по горизонтали выравнивание по тексту
+        flex-direction: row
+        height: 120px  
+    &__logo
+        width: 222px
+        height: 120px
+    &__content-conteiner
+        display: flex
+        flex-direction: row
+        position: relative
+    &__first-elipse
+        position: absolute
+        top: 15px
+        right: 0px
+    &__second-elipse
+        position: absolute
+        right: -217px
+        top: 531px
+.nav-menu
+    position: relative  
+    padding-top: 80px
+    padding-left: 520px  
+    &__list
+        //задаём тип обьектов в списке flex что бы его можно было передвигать внутри контейнера(списка)
+        display: flex
+        //выравнивание элементов
+        flex-direction: row
+    &__list-item
+        //задаем отступы и шрифт для самих обьектов в листе
+        margin-right: 61px
+        font-size: 25px
+        color: black
+        font-family: montserat
+        width: 93px
+        height: 20px      
+        //создали псевдо класс для поседнего элемента списка что бы обнулить его отступ справа тк обьект сам себя не двигает(по правилу)    
+        &:last-child
+            margin-right: 0px
+        //обращаемся к тегу ссылкам и убираем их стилизацию по стандарту
+        a
+            text-decoration: none
+            color: black 
+    
+
+.left-wrapper
+    //у класса родителя задаю релэтив(блок позиционируется относительно своего расположения по блокам)
+    position: relative
+    &__img
+        position: relative
+        z-index: 3
+        padding-top:32px
+
+    &__rectangle-blue
+        //у наследника пишу абсолют(будет равняться по родителю если он релетив)
+        position: absolute
+        z-index: 1
+        top: 150px
+        left: -50px
+        width: 508.154px
+        height: 195.859px
+        background-color: $color-blue
+        border-radius: 100px
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        transform: rotate(-64deg)
+    &__rectangle-red
+        position: absolute
+        z-index: 2
+        top: 182px
+        left: -6px
+        width: 508.154px
+        height: 195.859px
+        background-color: $color-red
+        border-radius: 100px
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        transform: rotate(316deg)
+    &__rectangle-grey
+        position: absolute
+        z-index: 0
+        top: 227px
+        left: 27px
+        width: 508.154px
+        height: 195.859px
+        background-color: $color-grey
+        border-radius: 100px
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        transform: rotate(337deg)
+.right-wrapper
+    position: relative
+    width: 418px
+    top: 146px
+    left: 0px
+    z-index: 999
+    &__icons-box
+        position: relative    
+    &__title
+        position: relative
+        top: 1px
+        margin-bottom: 5px
+    &__text
+        font-size: 25px
+        position: relative
+        margin-bottom: 30px
+        width: 383px
+.icons
+    display: flex
+    flex-direction: row
+    &__item
+        display: flex
+        //выравнивание по горизонтали
+        justify-content: center
+        //по вертикали
+        align-items: center
+        height: 35px
+        width: 35px
+        border: 1px solid black
+        border-radius: 100px
+        margin-right: 13px
+        &:last-child
+            margin-right: 0px
+        i
+            font-size: 30px
+.title
+    font-weight: bold
+    position: relative
+    font-size: 48px
+    &__hr
+        position: absolute
+        width: 42px
+        bottom: 1px
+        margin: 0
+        border: 0
+        border-top: 1px solid
+.buttons
+    display: inline-flex
+    &__main-btn
+        margin-right: 37px
+        width: 190px
+        height: 69.111px
+        background-color: $color-red
+        border-radius: 100px
+        border: 0
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        font-size: 20px
+        color: white
+    &__icon-btn
+        display: inline-flex
+        img
+            margin-right: 5px
+    &__text
+        display: flex
+        align-items: center
+        font-size: 20px
+.elipse
+    width: 254.739px
+    height: 265.177px
+    background: linear-gradient(135deg, rgba(14, 125, 255, 0.71) 15.87%, #EE5151 61.72%, rgba(99, 96, 101, 0.90) 84.1%)
+    border-radius: 150px
+    display: flex
+    justify-content: center
+    align-items: center
+    opacity: 0.5
+    //модификаторы прописываются через _
+    &_dig
+        width: 744.73px
+        height: 775.243px
+        border-radius: 999px 
+    &__subtract
+        width: 160.544px
+        height: 163.378px
+        background-color: #D9D9D9
+        border-radius: 150px
+        &_big
+            width: 469.349px
+            height: 477.634px
+            border-radius: 999px
+
+.second-section
+    overflow: hidden
+    position: relative
+    background: #D9D9D9
+    min-height: 700px
+    &__container
+        padding-top:27px
+        position: relative
+    &__title
+        margin-bottom: 63.32px
+        hr
+            bottom: -1px 
+            width: 37px
+    &__cards-box
+        display: flex
+        justify-content: center
+        position: relative
+        margin-bottom: 55px
+        z-index: 1
+    &__cards-item
+        margin-right: 24px
+        &:last-child
+            margin-right: 0 
+    &__icons-box
+        display: flex
+        //задали одинаковое расстоянеи между контентом и контейнером
+        justify-content: space-evenly
+    &__elipse
+        position: absolute
+        top: 202px
+        left:-122px    
+.cards-item
+    width: 360px
+    height: 360px
+    background-color: #0E7DFF
+    border-radius: 10px    
+    display: flex
+    align-items: flex-end
+    position: relative
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    &__img
+        position: absolute
+        height: 300px
+        left: 39px
+    &__text
+        //указал ширину по большему тексту
+        width: 304px
+        font-size: 40px
+        font-weight: bold
+        //выравнивание текста по центру
+        text-align: center
+        transform: rotate(90deg)
+        position: absolute
+        top: 142px
+        right: -47px
+//модификаторы цвета создаются по названию класса+название модификатора через_
+.cards-item_red
+    background: $color-red 
+.cards-item_grey
+    background: $color-grey
+
+.icons-item
+    display: inline-flex
+    align-items: center
+    &__img
+        margin-right: 17px
+    &__text
+        font-size: 25px
+        span
+            font-size: 40px
+            font-weight: bold       
+
+
+.third-section
+    position: relative
+    background:#D9D9D9
+    min-height: 700px
+    overflow: hidden
+    &__container
+        position: relative
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+        padding-top:58px
+        margin-bottom: 10px
+    &__right-wrapper
+        max-width: 551px
+    &__right-title
+        z-index: 1
+        padding-left: 143px
+        margin-bottom: 33px
+    &__left-title
+        position: absolute
+        z-index: 1
+        top: 312px
+        left: 178px
+    &__text
+        position: relative
+        z-index: 1
+        font-size: 25px
+        margin-bottom: 30px
+    &__buttons
+        display: flex
+        justify-content: center
+    &__first-elipse
+        position: absolute
+        top: 141px
+        left: 133px
+    &__figure
+        position: absolute
+        top: 233px
+        left: 0px       
+    &__second-elipse
+        position: absolute
+        top: -485px
+        right: -418px
+.title__hr_top
+    position: absolute
+    bottom: 47px       
+
+.footer
+    position: relative
+    background: #D9D9D9 
+    &__container
+        position: relative
+        //задаём мин высоту контейнеру а не секции тк нужно использовать выравниванеи через флекс а оно без опр размеров не может выравнивать элементы по центру и тд так как места в контейнере не будет,элементы займут всё пространство контейнера
+        //высота секции растянется в высоту своих элементов которые внутри
+        min-height: 443px
+        display: flex
+        //выравнивание по вертикали(работает если указать высоту контейнера)
+        align-items: center
+        //выравнивание по горизонтали
+        justify-content: flex-end
+    &__title
+        font-size: 60px
+        width: 520px
+      
+    &__img
+        position: absolute
+        left: -149px
+        bottom: 0px
+    &__icons-box
+        display: flex
+        position: relative
+        top: 8px
+    .icons
+        &__item
+            height: 45px
+            width: 45px
+            i
+                font-size: 40px
+
+
+//создаём медиа правила для адаптивной верстки сайта
+//для комп версии мы уже сделали наш сайт (1140px контейнер)
+
+//мал комп или горизонтальный планшет
+@media (max-width: 1199px)
+    //меняем ширину всех контейнеров
+    .container
+        width: 950px
+    .main-section
+        //навигационный контейнер
+        &__nav-container
+            display: flex
+            justify-content: space-between
+            align-items: center
+        //нав меню
+        &__nav
+            padding: 0px
+        //основной контейнер с контентом
+        &__content-conteiner
+            justify-content: center
+    //гитарист
+    .left-wrapper
+        &__img
+            width: 650px
+        &__rectangle-blue
+            width: 485px
+            height: 166px
+        &__rectangle-red
+            width: 485px
+            height: 166px
+        &__rectangle-grey
+            width: 485px
+            height: 166px
+    .right-wrapper
+        left:-50px
+    ////вторая секция
+    .second-section
+        &__cards-box
+            display: flex
+            justify-content: center
+        .cards-item
+            &__text
+                width: 250px
+    //третья секция 
+    .third-section
+        &__container
+            justify-content: space-around
+        &__left-wrapper
+            position: relative
+        &__left-title      
+            position: relative
+            top: -115px
+            left: 0px
+        &__first-elipse
+            left: 88px
+        &__figure
+            left: -18px 
+        &__second-elipse
+            width: 700px
+            height: 700px
+    .footer
+        &__container
+            justify-content: center
+        &__img
+            position: relative
+            left: 0
+            bottom: 0
+            
+//вертикальный планшет
+@media (max-width: 991px)
+    .container
+        width: 720px 
+    .title
+        font-size: 45px
+    .main-section
+        min-height: 650px 
+    .main-section__first-elipse
+        width: 200px
+        height: 200px
+        .elipse__subtract
+            width: 125px
+            height: 125px
+    //гитарист
+    .left-wrapper
+        &__img
+            width: 560px
+            left: 88px
+        &__rectangle-blue
+            width: 420px
+            height: 128px
+            left: 23px
+        &__rectangle-red
+            width: 420px
+            height: 128px
+            left: 64px
+        &__rectangle-grey
+            width: 420px
+            height: 128px
+            left: 93px       
+    .right-wrapper
+        left: -78px
+        top: 46px     
+    ////вторая секция
+    .second-section
+        min-height: 540px
+        &__container
+            padding-top: 5px
+        &__title
+            margin-bottom:10px
+        &__cards-box
+            margin-bottom: 15px
+        .cards-item
+            &__img
+                left:0px  
+            &__text
+                width: 250px
+                left:60px  
+    .icons-item
+        margin-right: 12px
+        &:last-child
+            margin-right: 0px
+        &__img
+            margin-right: 5px
+            width: 69px
+        &__text
+            font-size: 19px
+    //третья секция 
+    .third-section
+        min-height: 600px
+        &__container 
+            padding-top: 0px
+        &__text
+            font-size: 25px
+            margin-bottom: 15px  
+        &__right-title
+            margin-bottom: 15px  
+        &__left-title      
+            left: -13px
+        &__first-elipse
+            left: 37px
+            top: 169px
+            width: 145px
+            height: 145px
+            .elipse__subtract
+                width: 85px
+                height: 85px
+        &__figure
+            left: -23px
+            top: 232px
+            width: 145px
+            height: 145px 
+        &__second-elipse
+            width: 622px
+            height: 622px
+   
+                   
+//горизонтальный телефон    
+@media (max-width: 767px)
+    .container
+        width: 540px
+    .nav-menu
+        //прикрепляем меню незаивисимо от прокрутки страницы
+        position: fixed
+        //прибиваем к опр координатам
+        top: 0
+        //скрываем нав меню для моб потом пропишем значение 0 что бы появился
+        right:-100%
+        //100vh-единица измерения которая значит высота 100% от области экрана
+        height: 100vh
+        width: 50%
+        background:#716F73
+        z-index: 1000
+        //доб переход анимацию 
+        transition: 1s all
+        //обращаемся к списку
+        &__list
+            flex-direction: column
+            justify-content: space-evenly
+            align-items: center
+            //высота 100проц от родителя
+            height: 100%
+            width: 40%
+            //убираем марджины
+        &__list-item
+            margin-right: 0
+            font-size: 25px
+            width:90px
+    //начинаем изменять контейнер для моб версии
+    .hamburger
+        width: 30px
+        position: fixed
+        top: 60px
+        right: 334px
+        height: 14px
+        z-index: 1001
+        //обращаемся напрямую к тэгу
+        span
+            //подстраиваем под полосы области в контейнере
+            height: 2px
+            width: 100%
+            //изначально span строчный элемент меняем это на блочный что бы полосы были друг под другом
+            display: block
+            //красим фон выд области
+            background: black
+            //создаём отступы между линиями
+            margin-bottom: 4px
+            //св-во transition задает анимацию перехода обьекта из одного состояния в другое
+            //1s-время анимации перехода all-для всех элементов  в теге span
+            transition: 1s all
+            //обмнуляем отступы у последней линии
+            &:last-child
+                margin-bottom: 0
+    //создаем модификатор при котором гамбургер будет изменять свою форму при активации
+    .hamburger_active
+        //обращаемся к тэгу
+        span
+            //делаем отступ между линиям меньше(ровняем)
+            margin-bottom: -2px
+            //при помощи &:nth-child(в скобках указываем порядковый номер элемента который будем менять)
+            &:nth-child(1)
+                //в transform можно зап неск действий
+                //translate() сдвигает элементы по опр оси
+                transform: translateY(3px) rotate(-45deg)
+            &:nth-child(2)
+                //скрываем 2 полосу
+                display: none
+            &:nth-child(3)
+                transform: translateY(3px) rotate(45deg)
+    //когда active нав меню появляется
+    .nav-menu_active
+        right: 0       
+                               
+//вертикальный телефон   
+@media (max-width: 575px)
+    .container
+        width: 100%
+    .main-section
+        min-height: 700px
+        &__logo
+            width: 149px
+            height: 101px
+        &__first-elipse
+            top: 260px
+            right: 0px
+        &__second-elipse
+            display: none
+    .hamburger
+        top: 64px
+        right: 35px
+    .nav-menu
+        &__list
+            width: 100%
+    .title
+        font-size: 35px
+        &__hr_top
+            bottom: 33px
+        
+           
+    .left-wrapper
+        &__img
+            width: 335px
+            left: 152px
+            top: -36px
+        &__rectangle-blue
+            width: 319px
+            height: 112px
+            left: 96px
+            top: 66px
+        &__rectangle-red
+            width: 319px
+            height: 114px
+            left: 125px
+            top: 85px
+        &__rectangle-grey
+            width: 305px
+            height: 114px
+            left: 156px
+            top: 114px
+    .right-wrapper
+        left: -153px
+        top: 289px
+        width: 290px
+        height: 236px
+        &__text
+            font-size: 22px
+            margin-bottom: 10px
+            width: 252px
+        &__button
+            position: relative
+            margin-top: 10px
+            right: 15px
+            align-items: center
+    .buttons
+        &__main-btn
+            width: 148px
+            margin-right: 3px
+        &__icon-btn
+            margin-right: 5px
+        &__text
+            font-size: 20px    
+
+    .second-section
+        &__title
+            display: flex
+            justify-content: center
+            margin-bottom: 10px
+        &__cards-box
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            margin-bottom: 25px
+        &__cards-item
+            border-radius: 41px
+            width: 280px
+            height: 318px
+            border-radius: 41px
+            align-content: flex-start
+            justify-content: space-between
+            align-items: flex-end
+            margin-bottom: 45px
+            margin-right: 0
+            &:last-child
+                margin-bottom: 0px
+        &__icons-box
+            flex-direction: column
+            align-items: center
+            margin-bottom: 25px
+        &__icons-item
+            width: 185px
+            margin-right: 0
+            margin-bottom: 15px
+            &:last-child
+                margin-bottom: 0 
+
+    .cards-item__text
+        top: 112px
+        right: -35px
+
+    .icons-item
+        &__img
+            margin-right: 20px
+            width: 69px
+    .third-section
+        min-height: 600px
+        &__left-wrapper
+            width: 115px  
+        &__right-wrapper
+            max-width: 336px
+        &__right-title
+            padding: 0
+        &__left-title
+            left: 27px
+            rotate: 90deg
+        &__text
+            width: 204px
+            font-size: 21px
+            margin-bottom: 30px
+        &__buttons
+            position: relative
+            width: 276px
+            right: 58px
+        &__first-elipse
+            left: 37px
+            top: 497px
+        &__figure
+            left: -23px
+            top: 572px
+        &__second-elipse
+            display: none
+    .footer
+        min-height: 431px
+        &__title
+            width: 238px
+        &__img
+            position: absolute
+            width: 283px
+            top: 239px
+            left: 0px
+        &__container
+            align-items: normal
+            padding-top: 35px   
+        &__icons-box
+            justify-content: space-between
+                    
+
+
+
+
+
+
+
+    // $ создаём переменную с цветом 
+//$main-color: #EB6262
+// создаем mixin (сохраняем тут разные свойства и называем его box) 
+//@mixin  box
+    //width: 400px
+    //height: 400px
+    //background-color: grey
+
+//.block
+    // используем наш сохр mixin для этого пишем команду @include */
+    //@include box
+    //амперсанта равняется классу
+    //&__text
+        // присваиваем переменную цвету 
+        //color: $main-color
+    
+//.block-2
+    //@include box
+    //margin-top: 20px 
+
+
+
+    
+
+
+
+    
+
+        
+
