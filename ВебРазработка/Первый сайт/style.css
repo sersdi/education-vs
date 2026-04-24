@@ -1,0 +1,21 @@
+div{                             /* что бы обратиться к тэгу пишем его название без точки */          
+    background-color: blue;       /* цвет оболочки контейнера */
+    width: 400px;                   /* ширина */
+    height: 400px;                  /* высота */
+}
+.box-1{                           /* что бы обратиться к классу пишем через точку его название */
+    background-color: brown;
+    width:max-content;
+}
+.text-1{
+    font-size: large;
+    color: black;
+}
+.box-2{
+    background-color:violet;
+    height:fit-content;
+}
+.text-2{
+    font-size: 50px;
+    color: black;
+}

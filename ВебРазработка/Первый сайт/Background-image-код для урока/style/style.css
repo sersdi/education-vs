@@ -1,0 +1,16 @@
+.border {
+    width: 1500px;
+    height: 500px;
+    border: 3px solid black;
+    /* Что бы работать с изображениями в CSS пишем такую команду: */
+    /* url-путь к изображению */
+    /* ../выход из текущей папки- */
+    background-image: url(../img/01-Logo.svg);
+    /* повторение изображения */
+    background-repeat: no-repeat;
+    /* свойство которое настраивает отображение при прокрутки страницы */
+    background-attachment: fixed;
+    
+     
+}
+

@@ -1,0 +1,20 @@
+.wrapper{
+    background-color:red;
+    overflow: hidden;
+    /* контейнер по высоте подстроиться по размеру с содержимым */
+    min-height: 100px;
+}
+.box1{
+    height: 200px;
+    background-color: aqua;
+    /* Максимальная ширина может быть 400 либо меньше
+    текст подстраиваться под размер блока */
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+.box2{
+    height: 200px;
+    background-color:blueviolet;
+    /* указываем минимальный размер если будем что то добавлять то секция будет увеличиваться */
+    min-width: 400px;
+}

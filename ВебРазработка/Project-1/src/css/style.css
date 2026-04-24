@@ -1,0 +1,243 @@
+/* Обращаемся ко всем элементам */
+/* для работы с рамками и вообще с сайтами указываем */
+* {
+	box-sizing: border-box;
+}
+
+/* подключаю локально шрифты */
+@font-face {
+	/* указываю название шрифта */
+	font-family: 'Philosopher';
+	/* команда ресурсы ищет у пользователя этот шрифт, если его не будет то у пользователя этот шрифт загрузится */
+	src: local('Philosopher');
+	/* через ресурсы подключаем шрифт через нашу папку со шрифтами, перед этим скачал шрифты с разными форматами (ttf стандартный остальные если не будут работать в разных браузерах откроются другие) */
+	src: url('../fonts/Philosopher.ttf');
+}
+
+/* обращаюсь к тэгу html(самому сайту b подключаю для всех элементов шрифт) */
+html {
+	font-family: 'Roboto';
+}
+
+/* подключаю ещё шрифты (более расширенно) */
+@font-face {
+	font-family: 'Roboto';
+	src: local(Roboto);
+	/* (ttf стандартный формат остальные если не будут работать в разных браузерах откроются другие(eot woff)) */
+	src: url('../fonts/Roboto-Regular.eot');
+	src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-Regular.woff') format('woff'),
+		url('../fonts/Roboto-Regular.ttf') format('truetype');
+	/*Если подключили для всех элементов один шрифт но у него есть ещё вариации то можем указав ширину шрифта менять тип шрифта у других элементов одной вот этой командой */
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/Roboto-Bold.eot');
+	src: url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-Bold.woff') format('woff'),
+		url('../fonts/Roboto-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+body {
+	padding-top: 20px;
+	background-color: #ffe2b0; /* ХЕКС КОД */
+}
+header {
+	/* выравнивание текста */
+	text-align: center;
+	/* внешний отступ: */
+	margin-bottom: 20px;
+}
+/* обращаюсь к списку */
+ul {
+	/* выравнивание текста */
+	text-align: center;
+	/* стиль разметки списка */
+	list-style-type: none;
+	/* внутренний отступ: */
+	padding: 0px;
+}
+/* Обращаюсь к элементам списка */
+li {
+	/* отображение элемента строчный или блочный или и то и то */
+	display: inline;
+	/* внешний отступ */
+	margin-right: 100px;
+}
+/* обращаюсь к ссылкам */
+a {
+	color: black;
+	text-decoration: none;
+	/* размер шрифта */
+	font-size: 18px;
+}
+/* обращаюсь к псевдо классу a(hover-наведение) */
+/* псевдо классы пишутся через двоеточие : */
+a:hover {
+	color: red;
+}
+/* создаю псевдо класс последнего элемента списка */
+/* согласно правилу:элемент можно margin вправо вниз(каждый элемент двигает другой но не самого себя) */
+/* Когда задавали элементам списка margin то для всех прописали margin-right но последний элемент двигал сам себя  */
+/* мы этого исправляем */
+li:last-child {
+	margin-right: 0px;
+}
+nav {
+	margin-bottom: 20px;
+	font-weight: 400;
+}
+/* обращаюсь к классу */
+.section-about {
+	height: 640px;
+	/* упрощаем */
+	background: url(..//img/01-Background.jpg) center/cover no-repeat;
+	position: relative;
+	/* обратился к соседу что бы подвинуть секцию с иконками снизу */
+	margin-bottom: 20px;
+
+	/* background-image:url(../img/01-Картинка-фона.jpg) ;
+	/* центрируем изображение в контейнере */
+	/* background-position: center; */
+	/* размер изображения в контейнере по ширине */
+	/* background-size: cover; */
+}
+.section-about__block {
+	height: 190px;
+	width: 420px;
+	background: linear-gradient(
+		180deg,
+		rgba(244, 213, 178, 0.8) 0%,
+		rgba(234, 156, 65, 0.8) 100%
+	);
+	position: absolute;
+	/* Что бы элемент не прыгал от разрешения монитора указываем его местоположение в % от ширины сайта */
+	top: 54%;
+	left: 50%;
+	/* Что бы сделать отступы вверх/слева используем padding у родителя(по правилу) */
+	padding-top: 15px;
+}
+.section-about__border {
+	width: 390px;
+	height: 160px;
+	border: 1px solid #000000;
+	margin: 0 auto;
+	padding: 17px 0 0 28px;
+	text-align: left;
+}
+.section-about__title {
+	font-size: 36px;
+	/* обнуляем стандартные отступы */
+	margin: 0;
+	margin-bottom: 9px;
+	/* указываю шрифт который подключил локально(ввожу его название) */
+	font-family: 'Philosopher';
+}
+.section-about__text {
+	font-size: 12px;
+	margin: 0;
+	/* тк для всех элементов подключил шрифт roboto то просто указываем ширину нужного шрифта */ 
+	font-weight: 400;
+}
+
+/* уникальный идентификатор
+#logo{} 
+до этого нужно присвоить тэгу id*/
+
+/* обращаюсь к секции description что бы отодвинуть от след секции */
+.section-description {
+	margin-bottom: 20px;
+}
+/* обращаюсь к контейнеру с иконками */
+.section-description__icon-box {
+	text-align: center;
+	/* двигаю следующую секцию */
+	margin-bottom: 20px;
+}
+/* создал универсальный класс img для контейнера с иконками через пробел и обратился к иконкам в нём */
+.section-description__icon-box img {
+	margin-right: 76px;
+}
+/* создал псевдо класс что бы обратиться к последней иконке и убрать отступ у последнего элемента(тк двигает сам себя а так нельзя) */
+.section-description__icon-box img:last-child {
+	margin-right: 0px;
+}
+.section-description__title {
+	font-size: 96px;
+	/* обнулил отступы у заголовка h2(у всех заголовков они есть по стандарту) */
+	margin: 0;
+	text-align: center;
+	margin-bottom: 20px;
+	font-family: 'Philosopher';
+}
+/* обращаюсь к универсальному классу (тэгу span) */
+.red {
+	color: #f15b40;
+}
+/* обращаюсь к тексту */
+.section-description__text {
+	margin: 0 auto;
+	text-align: center;
+	width: 1000px;
+	font-size: 18px;
+	font-weight: 400;
+	
+}
+/* обращаюсь к секции что бы карта была по середине */
+.section-map {
+	text-align: center;
+	margin-bottom: 20px;
+}
+/* обращаюсь к заголовку перед картой и двигаю карту  */
+.section-map__title {
+	margin-bottom: 20px;
+	font-size: 36px;
+	font-family: 'Philosopher';
+}
+
+/* вставляем карту интерактивную при помощи яндекс конструктора */
+/* .iframe {
+} */
+
+/* что бы сайт не обрубался на nav делаем больше высоту нашей рабочей области в footer */
+footer {
+	height: 80px;
+}
+/* обращаюсь к линии */
+hr {
+	/* обнуляем стандартные установки рамки */
+	border: none;
+	border-top: 1px solid #999999;
+	width: 1024px;
+	/* выравниваем */
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+/* схлопывание margin браузер оставляет наибольший отступ от блоков чьи отступы по направлению к друг другу */
+/* внешний отступ: margin-top: 70px */
+/* внутренний отступ: padding-top: 30px */
+/* толщина рамки: border-width: 3px*/
+/* цвет рамки: border-color: black*/
+/* стиль рамки: border-style: solid */
+/* цвет фона: background-color */
+/* background-color: pink; */
+
+/* Делаем отступы одной командой(идут по часовой: вверх справа снизу слева ) */
+/* внешний */
+/* margin: 30px 50px 50px 0px; */
+/* внутренний */
+/* padding: 20px 40px 0px 0px; */
+/* рамка: толщина, стиль рамки, цвет */
+/* border: 3px solid black; */
+/* ширина */
+/* width: 500px; */
+
+/* строчный элемент можно сделать блочным или наоборот или всё вместе */
+/* display: inline-block;
+margin: 50px 0px 50px; */
+/* для строчных элементов не работает ширина или отступы вертикальные */
