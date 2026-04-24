@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Bootstrap demo</title>
+		<!-- Подключаем библиотеку  css bootstrap в этой библиотеке уже есть normalize и reset
+		Так же в этой библиотеке для стилизации css элементов исп классы для удобства -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<!-- Подключаю иконочные шрифты -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+		/>
+		<!-- Подключаем свои стили после стилей css bootstrap -->
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body>
+		<!-- код из библиотеки панель навигации -->
+		<!-- Навигационное меню -->
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<!-- вставляем свой логотип через тег img -->
+				<a class="navbar-brand" href="#"
+					><img src="img/logo.svg" alt="logo"
+				/></a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<!-- Стилизация через классы mb-2 mb-lg-0 -->
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<!-- При помощи css boostrap задаем марджины и прочие изменения через классы для них есть своя абравиатура me - margin end, 3-rem  -->
+							<a class="nav-link active" aria-current="page" href="#"
+								>Занятия</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Контакты</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								Обо мне
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Action</a></li>
+								<li><a class="dropdown-item" href="#">Another action</a></li>
+								<li><hr class="dropdown-divider" /></li>
+								<li>
+									<a class="dropdown-item" href="#">Something else here</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<form class="d-flex" role="search">
+						<input
+							class="form-control me-2"
+							type="search"
+							placeholder="Search"
+							aria-label="Search"
+						/>
+						<button class="btn btn-outline-success" type="submit">
+							Search
+						</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<!-- Карусель -->
+		<!-- Обертка карусели -->
+		<!-- Для редактирования элементов можно использовать атрибуты
+		Они вкладываются в первый тэг
+		Что бы узнать какие атрибуты нужны для управления необходимо обратиться к документации в библиотеке boostrap
+		
+		Можем поместить их между class и id
+		data-bs-interval указывается в мс 1с=1000мс 
+		data-bs-ride="carousel" задаёт анимацию перехода -->
+		<div
+			id="carouselExampleIndicators"
+			data-bs-interval="3000"
+			data-bs-ride="carousel"
+			class="carousel slide"
+		>
+			<div class="carousel-indicators">
+				<button
+					type="button"
+					data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="0"
+					class="active"
+					aria-current="true"
+					aria-label="Slide 1"
+				></button>
+				<button
+					type="button"
+					data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="1"
+					aria-label="Slide 2"
+				></button>
+				<button
+					type="button"
+					data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="2"
+					aria-label="Slide 3"
+				></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<!-- добавляем на слайд инфу
+					создаём контейнер -->
+					<div class="content">
+						<h1>Hello World!</h1>
+						<p>
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+							nemo, dicta inventore omnis possimus fuga. Sapiente molestiae
+							tenetur, laboriosam totam qui voluptatem sit ratione mollitia
+							dicta. Illo consequatur voluptates quibusdam?
+						</p>
+						<button type="button" class="btn btn-dark">Sign up!</button>
+					</div>
+					<!-- Создали контейнер для затемнения изображения -->
+					<div class="overlay"></div>
+					<img src="img/1.jpg" class="d-block w-100" alt="1-img-carousel" />
+				</div>
+				<div class="carousel-item">
+					<!-- добавляем на слайд инфу -->
+					<div class="content">
+						<h1>Hello World!</h1>
+						<p>
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+							nemo, dicta inventore omnis possimus fuga. Sapiente molestiae
+							tenetur, laboriosam totam qui voluptatem sit ratione mollitia
+							dicta. Illo consequatur voluptates quibusdam?
+						</p>
+						<button type="button" class="btn btn-secondary">Sign up!</button>
+					</div>
+					<!-- Создали контейнер для затемнения изображения -->
+					<div class="overlay"></div>
+					<img src="img/2.jpg" class="d-block w-100" alt="2-img-carousel" />
+				</div>
+				<div class="carousel-item">
+					<!-- добавляем на слайд инфу -->
+					<div class="content">
+						<h1>Hello World!</h1>
+						<p>
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+							nemo, dicta inventore omnis possimus fuga. Sapiente molestiae
+							tenetur, laboriosam totam qui voluptatem sit ratione mollitia
+							dicta. Illo consequatur voluptates quibusdam?
+						</p>
+						<button type="button" class="btn btn-secondary">Sign up!</button>
+					</div>
+					<!-- Создали контейнер для затемнения изображения -->
+					<div class="overlay"></div>
+					<img src="img/3.jpg" class="d-block w-100" alt="3-img-carousel" />
+				</div>
+			</div>
+			<!-- Кнопки на слайдере next prev -->
+			<button
+				class="carousel-control-prev"
+				type="button"
+				data-bs-target="#carouselExampleIndicators"
+				data-bs-slide="prev"
+			>
+				<!-- Тэг span отвечает за саму иконку кнопки поэтому если хотим другую удаляем span класса carousel-control-prev-icon и добавляем свою
+				В библиотеке есть уже шаблоны иконок их можно использовать разными способами (Как иконочные шрифты, просто скачать и добавить в проект через img, либо через тэг svg) -->
+				<!-- добавлю иконку через  тэг svg -->
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					fill="currentColor"
+					class="bi bi-arrow-left-square"
+					viewBox="0 0 16 16"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"
+					/>
+				</svg>
+				<span class="visually-hidden">Previous</span>
+			</button>
+
+			<button
+				class="carousel-control-next"
+				type="button"
+				data-bs-target="#carouselExampleIndicators"
+				data-bs-slide="next"
+			>
+				<!-- использую веб шрифт через тэг i -->
+				<i class="bi bi-arrow-right-square"></i>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+
+		<!-- блок с цитатой -->
+		<figure class="text-center">
+			<blockquote class="blockquote">
+				<p>A well-known quote, contained in a blockquote element.</p>
+			</blockquote>
+			<figcaption class="blockquote-footer">
+				Someone famous in <cite title="Source Title">Source Title</cite>
+			</figcaption>
+		</figure>
+
+		<!-- Карточки в контейнере для позиционирования с помощью классов бустрепа 
+		класс container тоже перезаписан и у него есть свои отступы
+		чтоб бы их убрать и элементы контейнера растянулись на весь экран прописываем в классе container-fluid-->
+		<div class="container">
+			<!-- Создаём контейнер для выравнивания элементов в строку а затем используем систему сеток,для этого оборачиваем наши карточки в обёртку row, что бы ровнять элементы по сеткам
+			Затем в обертках карточек указываем сколько сеток они займут(col-...), до этого нужно избавиться от html стилей готовой библиотеки(style width ... rem) что бы изменять ширину через css самим, всего 12 сеток на странице -->
+			<div class="row">
+				<!-- Для адаптива под разные уст-ва указываем ширину колонок в сетках col
+				по станадрту для моб самых мал просто col, для планшетов col-md, col-lg маленькие мониторы, более подробно указано в инструкции бустрапа 
+			 	Можем указывать отсупы между элементам по стандарту отступы идут слева от элемента командой offset-...
+				К этому классу offset также можно добавит настройки под адаптив -->
+				<div class="wrapper-1 col-12 col-md-6 col-lg-4">
+					<div class="card">
+						<img src="img/Карточка-1.jpg" class="card-img-top" alt="Карточка-1" />
+						<div class="card-body">
+							<p class="card-text">
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="wrapper-2 col-12 col-md-6 col-lg-4 offset-0">
+					<div class="card">
+						<img src="img/Карточка-2.jpg" class="card-img-top" alt="Карточка-2" />
+						<div class="card-body">
+							<p class="card-text">
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="wrapper-3 col-12 col-md-6 col-lg-4 offset-0">
+					<div class="card">
+						<img src="img/Карточка-3.jpg" class="card-img-top" alt="Карточка-3" />
+						<div class="card-body">
+							<p class="card-text">
+								Some quick example text to build on the card title and make up
+								the bulk of the card's content.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- подключаем библиотеку js из bootstrap -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+
+	</body>
+</html>
